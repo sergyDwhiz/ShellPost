@@ -87,4 +87,13 @@ def send_email(attachment_path=None):
 
     # Send the email
     server.sendmail(sender, recipient, msg.as_string())
-    
+
+    # Terminate the SMTP session and close the connection
+    server.quit()
+
+if __name__ == '__main__': # Checks the main function in (command_parser.c)
+    # Get the attachment path from the command line
+    attachment_path = sys.argv[1]
+
+    # Send the email to the recipient
+    send_email(attachment_path)
