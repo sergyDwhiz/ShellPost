@@ -8,6 +8,7 @@ License: MIT License
  '''
 
 # Import the settings from the settings.py file
+# Contains the configuration settings for the email sender. 
 import settings
 
 # Use the settings in your email sending code
@@ -19,3 +20,4 @@ sender = settings.DEFAULT_SENDER
 recipient = settings.DEFAULT_RECIPIENT
 subject = settings.EMAIL_SUBJECT 
 
+# Import the email modules we'll need 
