@@ -81,5 +81,8 @@ def send_email(attachment_path=None):
     # Get user credentials
     username = input('Enter your username: ')
     password = getpass.getpass('Enter your password: ')
+
+    # Login to the email server
+    server.login(username, password)
     
    
