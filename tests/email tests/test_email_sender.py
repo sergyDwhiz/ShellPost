@@ -1,0 +1,1 @@
+# Unit tests for "email_sender.py" script
