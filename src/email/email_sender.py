@@ -84,5 +84,7 @@ def send_email(attachment_path=None):
 
     # Login to the email server
     server.login(username, password)
+
+    # Send the email
+    server.sendmail(sender, recipient, msg.as_string())
     
-   
