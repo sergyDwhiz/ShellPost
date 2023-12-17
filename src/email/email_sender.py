@@ -38,3 +38,26 @@ from email import encoders # Encode and decode MIME
 
 import sys # For getting the command line arguments
 import getpass # Securely gets the password from the user via command line
+
+# Create a multipart message and set headers
+def send_email(attachment_path=None):
+    #Create a multipart message
+    msg = MIMEMultipart()
+
+    # Set email params 
+    msg['From'] = sender
+    msg['To'] = recipient
+    msg['Subject'] = subject
+
+    # Set email body
+    msg.attach(MIMEText(settings.EMAIL_BODY, 'plain'))
+
+    # Open the attachment file to be sent, if provided
+    if attachment_path:
+        with open(attachment_path, 'rb') as attachment:
+            # Add file as application/octet-stream
+            # Email client can usually download this automatically as attachment
+            part = MIMEBase('application', 'octet-stream')
+            part.set_payload(attachment.read()) # Read the attachment file
+
+            
