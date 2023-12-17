@@ -33,5 +33,5 @@ This repository is licensed under the MIT License.
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
 - [Using Pull Requests](https://help.github.com/articles/about-pull-requests/)
 - [GitHub Help](https://help.github.com)
-  * on [twitter](https://X.com/@justusNyah_). 
+  * on [twitter](https://X.com/JustusNyah). 
   * For security-related issues should be reported to me directly[Sergy(mailto:sergiusnyah@gmail.com).
