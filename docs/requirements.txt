@@ -11,6 +11,13 @@ The technical requirements for this code are as follows:
 5. Handle errors and exceptions gracefully.
 6. The code should be efficient and optimized for performance.
 
-Please let me know if you need any further information.
-"""
+System Dependencies:
+Have Python 3.7 or higher installed on your local environment.
+- Package A
+- Package B
+
+To resolve the system dependencies, please follow these steps:
+1. Install Python 3.7 or higher from the official Python website.
+2. Install Package A by running the command: pip install package_a
+3. Install Package B by running the command: pip install package_b
 
