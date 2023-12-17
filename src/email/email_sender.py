@@ -60,4 +60,7 @@ def send_email(attachment_path=None):
             part = MIMEBase('application', 'octet-stream')
             part.set_payload(attachment.read()) # Read the attachment file
 
+            # Encode file in ASCII characters to send by email
+            encoders.encode_base64(part)
+
             
