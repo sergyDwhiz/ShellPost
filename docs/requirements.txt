@@ -1,1 +1,16 @@
-# System dependencies
+# FILEPATH
+
+"""
+This code is responsible for performing a specific task.
+The technical requirements for this code are as follows:
+
+1. Code should be written in Python.
+2. The code should follow the PEP 8 style guide for Python code.
+3. Labour to well-document Code with clear and concise comments.
+4. Code should be modular and organized into functions or classes.
+5. Handle errors and exceptions gracefully.
+6. The code should be efficient and optimized for performance.
+
+Please let me know if you need any further information.
+"""
+
