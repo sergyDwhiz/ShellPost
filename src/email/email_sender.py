@@ -63,4 +63,10 @@ def send_email(attachment_path=None):
             # Encode file in ASCII characters to send by email
             encoders.encode_base64(part)
 
-            
+            # Add header that marks "part" as an attachment
+            '''
+            Set the attachment filename and add a header to the attachment part.
+            f'attachment; filename= {attachment_path}' is a formatted string literal which 
+            allows you to embed Python expressions inside a string by prefixing the string with f
+            '''
+            part.add_header('Content-Disposition', f'attachment; filename= {attachment_path}')
