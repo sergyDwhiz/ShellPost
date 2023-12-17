@@ -74,9 +74,9 @@ def send_email(attachment_path=None):
             # Add attachment to your email message 
             msg.attach(part)
 
-    # # Connect to the email server 
-    # server = smtplib.SMTP(server, port)
-    # server.starttls() # Secure the connection
+    # Connect to the email server 
+    server = smtplib.SMTP(server, port)
+    server.starttls() # Secure the connection
 
 
    
