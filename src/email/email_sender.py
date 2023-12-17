@@ -97,3 +97,4 @@ if __name__ == '__main__': # Checks the main function in (command_parser.c)
 
     # Send the email to the recipient
     send_email(attachment_path)
+    
