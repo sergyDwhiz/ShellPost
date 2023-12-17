@@ -21,3 +21,20 @@ recipient = settings.DEFAULT_RECIPIENT
 subject = settings.EMAIL_SUBJECT 
 
 # Import the email modules we'll need 
+import smtplib # Defines an SMTP client session object that can be used to send mail to any Internet
+               # machine with an SMTP or ESMTP listener daemon.
+
+from email.mime.text import MIMEText # For creating MIME objects (Multipurpose Internet Mail Extensions)
+                                     # use to create objects of major type text
+
+from email.mime.multipart import MIMEMultipart # MIME obejcts of major type multipart
+                                                # use to create objects of major type multipart     
+
+from email.mime.base import MIMEBase # Creates MIME objects of major types other than 
+                                     # text, multipart, or message
+
+from email import encoders # Encode and decode MIME 
+                           #objects into and out of base64-encoded strings
+
+import sys # For getting the command line arguments
+import getpass # Securely gets the password from the user via command line
