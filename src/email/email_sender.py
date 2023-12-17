@@ -70,3 +70,13 @@ def send_email(attachment_path=None):
             allows you to embed Python expressions inside a string by prefixing the string with f
             '''
             part.add_header('Content-Disposition', f'attachment; filename= {attachment_path}')
+
+            # Add attachment to your email message 
+            msg.attach(part)
+
+    # # Connect to the email server 
+    # server = smtplib.SMTP(server, port)
+    # server.starttls() # Secure the connection
+
+
+   
