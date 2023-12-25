@@ -91,9 +91,12 @@ def send_email(attachment_path=None):
     server.quit()
 
 if __name__ == '__main__': # Checks the main function in (command_parser.c)
-    # Get the attachment path from the command line
-    attachment_path = sys.argv[1]
-
+    # Checks if attachment file was provided
+    if len(sys.argv)>1:
+        attachment_path = sys.argv[1]
+    else: 
+        attachment_path = None
+        
     # Send the email to the recipient
     send_email(attachment_path)
     
