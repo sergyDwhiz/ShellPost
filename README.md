@@ -10,6 +10,8 @@ cd shellpost
 pip install -r requirements.txt
 
 # Usage 
+1. Add execution permission using the chmod command: 
+   `chmod +x src/email/email_sender/py`
 To use ShellPost, navigate to the project dir and run 
 `email_sender.py` 
 You can provide the path to the attatchment as a Command Line Argument: ``` bash
