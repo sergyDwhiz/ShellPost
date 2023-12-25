@@ -52,7 +52,8 @@ def send_email(attachment_path=None):
     msg.attach(MIMEText(settings.EMAIL_BODY, 'plain'))
 
     # Open the attachment file to be sent, if provided
-    if attachment_path:
+    if attachment_path is not None: 
+        #attach file
         with open(attachment_path, 'rb') as attachment:
             # Add file as application/octet-stream
             # Email client can usually download this automatically as attachment
