@@ -56,11 +56,11 @@ def send_email(attachment_path=None):
         with open(attachment_path, 'rb') as attachment:
             # Add file as application/octet-stream
             # Email client can usually download this automatically as attachment
-            part = MIMEBase('application', 'octet-stream')
-            part.set_payload(attachment.read()) # Read the attachment file
+            file = MIMEBase('application', 'octet-stream')
+            file.set_payload(attachment.read()) # Read the attachment file
 
             # Encode file in ASCII characters to send by email
-            encoders.encode_base64(part)
+            encoders.encode_base64(file) 
 
             # Add header that marks "part" as an attachment
             '''
@@ -68,10 +68,10 @@ def send_email(attachment_path=None):
             f'attachment; filename= {attachment_path}' is a formatted string literal which 
             allows you to embed Python expressions inside a string by prefixing the string with f
             '''
-            part.add_header('Content-Disposition', f'attachment; filename= {attachment_path}')
+            file.add_header('Content-Disposition', f'attachment; filename= {attachment_path}')
 
             # Add attachment to your email message 
-            msg.attach(part)
+            msg.attach(file)
 
     # Connect to the email server 
     server = smtplib.SMTP(server, port)
@@ -96,7 +96,7 @@ if __name__ == '__main__': # Checks the main function in (command_parser.c)
         attachment_path = sys.argv[1]
     else: 
         attachment_path = None
-        
+
     # Send the email to the recipient
     send_email(attachment_path)
     
