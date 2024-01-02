@@ -47,10 +47,13 @@ def send_email(attachment_path=None):
     msg['From'] = sender
     msg['To'] = recipient
     msg['Subject'] = subject
+    
+# Connect to the email server 
+    server = smtplib.SMTP(settings.EMAIL_HOST, settings.EMAIL_PORT)
+    server.starttls() # Secure the connection
 
     # Set email body
     msg.attach(MIMEText(settings.EMAIL_BODY, 'plain'))
-
     # Open the attachment file to be sent, if provided
     if attachment_path is not None: 
         #attach file
@@ -74,20 +77,17 @@ def send_email(attachment_path=None):
             # Add attachment to your email message 
             msg.attach(file)
 
-    # Connect to the email server 
-    server = smtplib.SMTP(server, port)
-    server.starttls() # Secure the connection
 
     # Get user credentials
-    username = input('Enter your username: ')
+    email = input('Enter your Email: ')
     password = getpass.getpass('Enter your password: ')
 
     # Login to the email server
-    server.login(username, password)
-
+    server.login(email, password)
+    
     # Send the email
     server.sendmail(sender, recipient, msg.as_string())
-
+                     
     # Terminate the SMTP session and close the connection
     server.quit()
 
@@ -95,7 +95,7 @@ if __name__ == '__main__': # Checks the main function in (command_parser.c)
     # Checks if attachment file was provided
     if len(sys.argv)>1:
         attachment_path = sys.argv[1]
-    else: 
+    else:          
         attachment_path = None
 
     # Send the email to the recipient
