@@ -1,0 +1,4 @@
+// Define the function for which we want to find the root
+
+function y = my_function(x)
+    y = x^3 - x -2
